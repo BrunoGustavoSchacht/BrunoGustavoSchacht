@@ -1,0 +1,92 @@
+public class CadLivro {
+
+    private String titulo;
+    private String autor;
+    private String editora;
+    private int numPags;
+    private int pagAtual = 0;
+
+    public CadLivro(String titulo, String autor, String editora, int numPags, int pagAtual) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.editora = editora;
+        this.pagAtual = pagAtual;
+        this.numPags = numPags;
+    }
+
+    public void getTitulo(String titulo) { // get = public void...(tipo n)/this
+        this.titulo = titulo;
+    }
+
+    public String setTitulo() { // set = public tipo...()/return
+        return titulo;
+    }
+//---------------------------
+
+    public void getAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String setAutor() {
+        return autor;
+    }
+//---------------------------
+
+    public void getEditora(String editora) {
+        this.editora = editora;
+    }
+
+    public String setEditora() {
+        return editora;
+    }
+//---------------------------
+
+    public void getNumPags(int numPags) {
+        this.numPags = numPags;
+    }
+
+    public int setNumPags() {
+        return numPags;
+    }
+//---------------------------
+
+    public void getPagAtual(int pagAtual) {
+        this.pagAtual = pagAtual;
+    }
+        
+    public int setPagsAtual() {
+        return pagAtual;
+    }
+    public double virarPagina(){
+        return ++pagAtual;
+    } 
+}
+
+//---------------------------------------
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main1 {
+    public static List<CadLivro> livros = new ArrayList<>();
+    
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        CadLivro livro1 = new CadLivro("A Ética Protestante e o Espirito Capitalista", "Max Weber", "Abril", 800, 45);
+        
+        System.out.println("Atributos do objeto livro: " + Object.toString(livro));
+        
+        System.out.println("Pagina atual: " + );        
+        
+        //1.2
+        CadLivro livro2 = new CadLivro();
+
+        System.out.println("Informe:");
+        System.out.println("Título:");
+        
+
+    }
+}
