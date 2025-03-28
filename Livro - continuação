@@ -1,0 +1,31 @@
+        // 1.2)
+         System.out.println("\n---  INFORME A SEGUIR OS SEGUINTES ATRIBUTOS:   ---");
+         char continua = ' ';
+         
+         do{
+         
+         System.out.println("\nDigite o titulo do livro:");
+         titulo = s.nextLine();
+ 
+         System.out.println("Digite o numero de paginas do livro:");
+         numPags = s.nextInt(); 
+         
+         livro.criarObjeto();
+         livros.add(livro);
+         
+         System.out.println("Deseja continuar: (s/n)");
+         continua = s.next().charAt(0);
+         
+         }while(continua == 's');
+         
+         for (int i = 0; i < livros.size(); i++) {
+             Livro j = livros.get(i);
+             
+             System.out.println("Titulo: " + j.getTitulo() + "  // Numero de paginas: " + j.getNumPags());
+         }
+        }
+}
+//--------------------------------------------
+     public void criarObjeto(){
+         Livro livro = new Livro(titulo, autor, editora, numPags);
+     }
