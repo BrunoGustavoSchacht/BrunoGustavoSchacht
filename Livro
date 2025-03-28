@@ -1,0 +1,127 @@
+public class Livro {
+    // Atributos privados
+    private String titulo;
+    private String autor;
+    private String editora;
+    private int numPags;
+    private int pagAtual;
+
+    // Construtor padrão
+    public Livro() {
+        this.pagAtual = 0;
+    }
+
+    // Construtor com parâmetros
+    public Livro(String titulo, String autor, String editora, int numPags) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.editora = editora;
+        this.numPags = numPags;
+        this.pagAtual = 0; // inicia na página 0
+    }
+    
+    // Métodos getters e setters
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) { 
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getEditora() {
+        return editora;
+    }
+
+    public void setEditora(String editora) {
+        this.editora = editora;
+    }
+
+    public int getNumPags() {
+        return numPags;
+    }
+
+    public void setNumPags(int numPags) {
+        this.numPags = numPags;
+    }
+
+    public int getPagAtual() {
+        return pagAtual;
+    }
+
+    public void setPagAtual(int pagAtual) {
+        this.pagAtual = pagAtual;
+    }
+
+    // Método para virar a página
+    public void virarPagina() {
+        if (pagAtual < numPags) {
+            pagAtual++;
+        } else {
+            System.out.println("Você já está na última página.");
+        }
+    }
+
+    // Sobrescrita do método toString para exibir o estado do objeto
+    @Override
+    public String toString() {
+        return "Livro{" +
+               "título='" + titulo + '\'' +
+               ", autor='" + autor + '\'' +
+               ", editora='" + editora + '\'' +
+               ", numPags=" + numPags +
+               ", pagAtual=" + pagAtual +
+               '}';
+    }
+}
+
+//---------------------------------------
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+public static List<CadLivro> livros = new ArrayList<>();
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        // Leitura dos atributos do livro
+        System.out.println("Digite o titulo do livro:");
+        String titulo = s.nextLine();
+
+        System.out.println("Digite o autor do livro:");
+        String autor = s.nextLine();
+
+        System.out.println("Digite a editora do livro:");
+        String editora = s.nextLine();
+
+        System.out.println("Digite o número de páginas do livro:");
+        int numPags = s.nextInt();
+                double numPag = s.nextDouble();
+                char a = s.next().charAt(0);
+
+
+        // Criação do objeto Livro com os dados informados
+        Livro livro = new Livro(titulo, autor, editora, numPags);
+
+        // Chamando o método para virar uma página
+        livro.virarPagina();
+        
+        
+        // Exibindo o estado atual do objeto
+        System.out.println(livro);
+        
+
+    }
+}
